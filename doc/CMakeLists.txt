@@ -28,38 +28,40 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # --------------------------------------------------------------------------
-# $Maintainer: Stephan Aiche $
-# $Authors: Stephan Aiche $
+# $Maintainer: Stephan Aiche, Chris Bielow $
+# $Authors: Andreas Bertsch, Chris Bielow, Stephan Aiche $
 # --------------------------------------------------------------------------
 
-# CMake sub-project for OpenMS code examples
-
-project("OpenMS_code_examples")
+project("OpenMS_doc")
 cmake_minimum_required(VERSION 2.8.3 FATAL_ERROR)
 
-set(EXAMPLES_executables)
+#------------------------------------------------------------------------------
+# Doc programs
+#------------------------------------------------------------------------------
+set(OpenMS_doc_executables)
+include(doxygen/parameters/executables.cmake)
 
-# ensure the tutorials got into bin/
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-
-# get the actual code examples
-include(${CMAKE_CURRENT_LIST_DIR}/executables.cmake)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "doc/doxygen/parameters")
 
 # add OpenMS includes 
 include_directories(${OPENMS_INCLUDE_DIRECTORIES})
 
-# add the targets
-foreach(i ${EXAMPLES_executables})
-  add_executable(${i} ${CMAKE_CURRENT_LIST_DIR}/${i}.C)
-  target_link_libraries(${i} ${OPENMS_GUI_LIBRARIES})
-  
-  # if not GUI and no style tests requested -> add as test
-  if(NOT ${i} MATCHES "_GUI_" AND NOT ENABLE_STYLE_TESTING)
-  	add_test(NAME ${i}
-						 COMMAND ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/${i} ${CMAKE_CURRENT_LIST_DIR})
-  endif()
+# build doc executables
+foreach(i ${OpenMS_doc_executables})
+	add_executable(${i} EXCLUDE_FROM_ALL doxygen/parameters/${i}.C)
+	target_link_libraries(${i} ${OPENMS_GUI_LIBRARIES})
 endforeach(i)
 
-# add collection target
-add_custom_target(Tutorials_build)
-add_dependencies(Tutorials_build ${EXAMPLES_executables})
+# collection target
+add_custom_target(doc_progs)
+add_dependencies(doc_progs ${OpenMS_doc_executables} TOPP UTILS GUI)
+
+include(${OPENMS_HOST_DIRECTORY}/cmake/OpenMSBuildSystem_doc.cmake)
+
+#------------------------------------------------------------------------------
+# Examples / Tutorials
+#------------------------------------------------------------------------------
+option(BUILD_EXAMPLES "Compile OpenMS code examples" ON)
+if(BUILD_EXAMPLES AND "${PACKAGE_TYPE}" STREQUAL "none")
+  add_subdirectory(code_examples)
+endif(BUILD_EXAMPLES AND "${PACKAGE_TYPE}" STREQUAL "none")

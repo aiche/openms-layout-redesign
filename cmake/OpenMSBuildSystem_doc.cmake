@@ -19,7 +19,6 @@ if (DOXYGEN_FOUND)
   configure_file(${OPENMS_HOST_DIRECTORY}/doc/OpenMS_tutorial/refman_overwrite.tex.in ${PROJECT_BINARY_DIR}/doc/OpenMS_tutorial/refman_overwrite.tex)
   configure_file(${OPENMS_HOST_DIRECTORY}/doc/TOPP_tutorial/refman_overwrite.tex.in ${PROJECT_BINARY_DIR}/doc/TOPP_tutorial/refman_overwrite.tex)
 
-
   #######################################################################
   ##doc_param_internal target
 	if(NOT MSVC)
@@ -154,11 +153,11 @@ if (DOXYGEN_FOUND)
                       VERBATIM)
     add_dependencies(doc_dot doc_param_internal)
   else()
-    Message(STATUS "DOT not found. Disabling target 'doc_dot'!")
+    message(STATUS "DOT not found. Disabling target 'doc_dot'!")
   endif()
 
 else()
-  Message(STATUS "Doxygen not found. Disabling all documentation targets!")
+  message(STATUS "Doxygen not found. Disabling all documentation targets!")
 endif()
 
 if (DOXYGEN_FOUND AND LATEX_COMPILER AND DVIPS_CONVERTER)
@@ -168,12 +167,12 @@ if (DOXYGEN_FOUND AND LATEX_COMPILER AND DVIPS_CONVERTER)
 
   set(DOXYGEN_START_BUGGY "1.6.3")
   set(DOXYGEN_END_BUGGY "1.7.2")
-  EXEC_PROGRAM(${DOXYGEN_EXECUTABLE}
+  exec_program(${DOXYGEN_EXECUTABLE}
     ARGS "--version"
     OUTPUT_VARIABLE DOXYGEN_VERSION)
 
   if (DOXYGEN_VERSION STRGREATER DOXYGEN_START_BUGGY AND DOXYGEN_VERSION STRLESS DOXYGEN_END_BUGGY )
-    MESSAGE(ERROR "Warning, DoxygenBug ( 1.6.? < vers. installed < 1.7.3 ) disguises generated tex inputfiles and files will not be recognized")
+    message(ERROR "Warning, DoxygenBug ( 1.6.? < vers. installed < 1.7.3 ) disguises generated tex inputfiles and files will not be recognized")
   endif ()
 
   add_custom_target(doc_tutorials
@@ -212,6 +211,5 @@ if (DOXYGEN_FOUND AND LATEX_COMPILER AND DVIPS_CONVERTER)
                     VERBATIM)
 else()
   set(DOC_TUTORIALS_ACTIVE FALSE)
-  Message(STATUS "Doxygen or Latex missing. Disabling 'doc_tutorials' target!")
+  message(STATUS "Doxygen or Latex missing. Disabling 'doc_tutorials' target!")
 endif()
-

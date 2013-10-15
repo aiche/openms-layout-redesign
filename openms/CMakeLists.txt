@@ -32,7 +32,7 @@
 # $Authors: Andreas Bertsch, Chris Bielow, Stephan Aiche $
 # --------------------------------------------------------------------------
 
-PROJECT("OpenMS")
+project("OpenMS")
 cmake_minimum_required(VERSION 2.8.3 FATAL_ERROR)
 
 ## naming conventions:
@@ -607,4 +607,3 @@ else()
 	endif()
 
 endif()
-
