@@ -1,8 +1,8 @@
 
 ## define some directories
 if ("${INSTALL_PREFIX}" STREQUAL ".")
-	set(CF_OPENMS_DATA_PATH ${PROJECT_SOURCE_DIR}/share/OpenMS CACHE INTERNAL "Path to the shared documents of OpenMS.")
-	set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
+	set(CF_OPENMS_DATA_PATH ${OPENMS_HOST_DIRECTORY}/share/OpenMS CACHE INTERNAL "Path to the shared documents of OpenMS.")
+	set(CMAKE_INSTALL_PREFIX ${OPENMS_HOST_DIRECTORY})
 else()
 	set(CF_OPENMS_DATA_PATH ${INSTALL_PREFIX}/share/OpenMS CACHE INTERNAL "Path to the shared documents of OpenMS.")
 	set(CMAKE_INSTALL_PREFIX ${INSTALL_PREFIX})
@@ -10,7 +10,7 @@ endif()
 
 
 
-set(CF_OPENMS_TEST_DATA_PATH ${PROJECT_SOURCE_DIR}/source/TEST/data/ CACHE INTERNAL "Path to the test data")
+set(CF_OPENMS_TEST_DATA_PATH ${OPENMS_HOST_DIRECTORY}/source/TEST/data/ CACHE INTERNAL "Path to the test data")
 
 ## check for Microsoft Visual Studio compiler
 if (MSVC)
