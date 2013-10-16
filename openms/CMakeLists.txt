@@ -303,12 +303,6 @@ if( ${list_pos} EQUAL -1 )
 	message(FATAL_ERROR "Aborting ...")
 endif()
 
-
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/lib")
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/bin")
-set(OPENMS_BINARY_DIR "${PROJECT_BINARY_DIR}/bin")
-set(OPENMS_WIN32_DLL_DIRECTORY ${CMAKE_RUNTIME_OUTPUT_DIRECTORY})
-
 ## big include file for headers and C files, which fills the OpenMS_sources variable
 include (${OPENMS_HOST_DIRECTORY}/cmake/includes.cmake)
 
@@ -415,16 +409,16 @@ add_dependencies(UTILS ${UTILS_executables})
 set(GUI_DIR source/VISUAL/APPLICATIONS/GUITOOLS)
 include(${GUI_DIR}/executables.cmake)
 foreach(i ${GUI_executables})
-	set(resource_file ${CMAKE_SOURCE_DIR}/${GUI_DIR}/${i}.rc)
-	set(resource_dir ${CMAKE_SOURCE_DIR}/${GUI_DIR}/${i}-resources/)
+	set(resource_file ${PROJECT_SOURCE_DIR}/${GUI_DIR}/${i}.rc)
+	set(resource_dir ${PROJECT_SOURCE_DIR}/${GUI_DIR}/${i}-resources/)
 	## add icons to TOPPView and INIFileEditor
 	if (MSVC AND EXISTS ${resource_file})
 		Message(STATUS "Setting resource file ${resource_file} for ${i}")
 		add_executable(${i} ${GUI_DIR}/${i}.C ${resource_file})
 	elseif(APPLE AND EXISTS ${resource_dir})
 		# the icon file
-		set(ICON_FILE_PATH "${CMAKE_SOURCE_DIR}/source/VISUAL/APPLICATIONS/GUITOOLS/${i}-resources/${i}.icns")
-    set(INFO_PLIST_TEMPLATE "${CMAKE_SOURCE_DIR}/source/VISUAL/APPLICATIONS/GUITOOLS/${i}-resources/${i}.plist.in")
+		set(ICON_FILE_PATH "${PROJECT_SOURCE_DIR}/source/VISUAL/APPLICATIONS/GUITOOLS/${i}-resources/${i}.icns")
+    set(INFO_PLIST_TEMPLATE "${PROJECT_SOURCE_DIR}/source/VISUAL/APPLICATIONS/GUITOOLS/${i}-resources/${i}.plist.in")
 		get_filename_component(ICON_FILE_NAME "${ICON_FILE_PATH}" NAME)
 
 		# we also need the icns in the app
