@@ -283,8 +283,9 @@ namespace OpenMS
   String File::findDoc(const String& filename)
   {
     StringList search_dirs;
-    search_dirs.push_back(String(OPENMS_BINARY_PATH) + "/doc/");
-    search_dirs.push_back(String(OPENMS_SOURCE_PATH) + "/doc/");
+    search_dirs.push_back(String(OPENMS_BINARY_PATH) + "/../doc/");
+    // source path is host/openms so doc is ../doc
+    search_dirs.push_back(String(OPENMS_SOURCE_PATH) + "/../doc/");    
     search_dirs.push_back(getOpenMSDataPath() + "/../../doc/");
     
     // needed for OpenMS Mac OS X packages where documentation is stored in <package-root>/Documentation
