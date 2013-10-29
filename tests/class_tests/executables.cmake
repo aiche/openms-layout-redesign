@@ -400,7 +400,7 @@ set(analysis_executables_list
 	MapAlignmentTransformer_test
 	MassDecompositionAlgorithm_test
 	MassDecomposition_test
-        ModifiedPeptideGenerator_test
+  ModifiedPeptideGenerator_test
 	OfflinePrecursorIonSelection_test
 	PeptideAndProteinQuant_test
 	PILISModelGenerator_test
@@ -559,6 +559,21 @@ if(NOT DISABLE_OPENSWATH)
   )
 endif(NOT DISABLE_OPENSWATH)
 
+set(Boost_dependent_tests
+	DIAHelper_test
+	EmgModel_test
+	MRMDecoy_test
+	MRMFeatureFinderScoring_test
+	MRMTransitionGroupPicker_test
+	OpenSwathDataAccessHelper_test
+	OpenSwathHelper_test
+	OpenSwathMRMFeatureAccessOpenMS_test
+	OpenSwathSpectrumAccessOpenMS_test
+	PeakPickerMRM_test
+	StatisticFunctions_test
+	String_test
+	TransitionTSVReader_test
+)
 ############### GUI executables (require MOC) ########
 set(GUI_executables_list
 	TOPPView_test
