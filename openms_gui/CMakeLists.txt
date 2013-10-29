@@ -43,6 +43,7 @@ include (${PROJECT_SOURCE_DIR}/includes.cmake)
 # TODO: XERCESC and  CONTRIB are included only with the others
 # Expose OpenMS's public includes (including transitive dependencies)
 set(OPENMS_GUI_INCLUDE_DIRECTORIES ${PROJECT_SOURCE_DIR}/include
+                                   ${PROJECT_BINARY_DIR}/include
                                    ${OPENMS_INCLUDE_DIRECTORIES}
     CACHE INTERNAL "OpenMS_GUI include directories" FORCE)
 
