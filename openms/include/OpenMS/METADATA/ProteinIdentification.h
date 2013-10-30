@@ -38,6 +38,7 @@
 #include <OpenMS/METADATA/ProteinHit.h>
 #include <OpenMS/METADATA/MetaInfoInterface.h>
 #include <OpenMS/DATASTRUCTURES/DateTime.h>
+#include <OpenMS/DATASTRUCTURES/StringList.h>
 
 #include <set>
 

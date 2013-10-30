@@ -40,6 +40,7 @@
 #include <OpenMS/FORMAT/XMassFile.h>
 #include <OpenMS/FORMAT/TextFile.h>
 #include <OpenMS/KERNEL/MSSpectrum.h>
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
 
 ///////////////////////////
 

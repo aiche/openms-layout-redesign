@@ -35,6 +35,8 @@
 #include <OpenMS/SIMULATION/LABELING/BaseLabeler.h>
 #include <OpenMS/SIMULATION/LABELING/BaseLabeler_impl.h>
 
+#include <OpenMS/DATASTRUCTURES/IntList.h>
+
 #include <map>
 
 using std::vector;

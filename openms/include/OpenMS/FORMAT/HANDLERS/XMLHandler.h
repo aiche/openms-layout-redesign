@@ -41,6 +41,8 @@
 #include <OpenMS/CONCEPT/Macros.h>
 
 #include <OpenMS/DATASTRUCTURES/DateTime.h>
+#include <OpenMS/DATASTRUCTURES/IntList.h>
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
 #include <OpenMS/METADATA/MetaInfoInterface.h>
 
 #include <xercesc/sax2/DefaultHandler.hpp>

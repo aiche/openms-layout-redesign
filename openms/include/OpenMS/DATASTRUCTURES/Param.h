@@ -41,11 +41,11 @@
 #include <OpenMS/CONCEPT/Types.h>
 #include <OpenMS/DATASTRUCTURES/DataValue.h>
 #include <OpenMS/DATASTRUCTURES/String.h>
+#include <OpenMS/DATASTRUCTURES/StringList.h>
 #include <OpenMS/DATASTRUCTURES/Map.h>
 
 #include <set>
 #include <iostream>
-
 
 namespace OpenMS
 {

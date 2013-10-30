@@ -36,6 +36,9 @@
 #include <OpenMS/ANALYSIS/QUANTITATION/PeptideAndProteinQuant.h>
 #include <OpenMS/MATH/STATISTICS/StatisticFunctions.h>
 
+#include <OpenMS/DATASTRUCTURES/IntList.h>
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
+
 #include <algorithm> // for "equal"
 
 using namespace std;

@@ -39,6 +39,9 @@
 #include <OpenMS/SIMULATION/LABELING/ITRAQLabeler.h>
 ///////////////////////////
 
+#include <OpenMS/DATASTRUCTURES/IntList.h>
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
+
 using namespace OpenMS;
 using namespace std;
 

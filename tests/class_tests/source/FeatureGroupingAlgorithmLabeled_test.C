@@ -37,7 +37,7 @@
 
 ///////////////////////////
 #include <OpenMS/ANALYSIS/MAPMATCHING/FeatureGroupingAlgorithmLabeled.h>
-
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
 ///////////////////////////
 
 using namespace OpenMS;

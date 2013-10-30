@@ -33,7 +33,10 @@
 // --------------------------------------------------------------------------
 
 #include <OpenMS/ANALYSIS/MAPMATCHING/LabeledPairFinder.h>
+
 #include <OpenMS/DATASTRUCTURES/ConstRefVector.h>
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
+
 #include <OpenMS/MATH/STATISTICS/Histogram.h>
 #include <OpenMS/MATH/STATISTICS/GaussFitter.h>
 

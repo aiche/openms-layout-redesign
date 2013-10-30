@@ -36,7 +36,8 @@
 #include <OpenMS/ANALYSIS/QUANTITATION/ProteinResolver.h>
 #include <OpenMS/MATH/STATISTICS/StatisticFunctions.h>
 #include <OpenMS/FORMAT/TextFile.h>
-#include <OpenMS/MATH/STATISTICS/StatisticFunctions.h>
+
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
 
 //#include <algorithm>
 

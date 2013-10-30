@@ -38,6 +38,8 @@
 #include <OpenMS/TRANSFORMATIONS/FEATUREFINDER/FeatureFinderAlgorithmSHCtrl.h>
 #include <OpenMS/TRANSFORMATIONS/FEATUREFINDER/FeatureFinderAlgorithm.h>
 
+#include <OpenMS/DATASTRUCTURES/IntList.h>
+
 #include "boost/shared_ptr.hpp"
 
 namespace OpenMS

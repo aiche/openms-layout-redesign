@@ -39,6 +39,7 @@
 #include <OpenMS/TRANSFORMATIONS/RAW2PEAK/TwoDOptimization.h>
 #include <OpenMS/TRANSFORMATIONS/RAW2PEAK/OptimizePick.h>
 #include <OpenMS/FILTERING/TRANSFORMERS/TICFilter.h>
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
 #include <boost/math/special_functions/fpclassify.hpp>
 
 #ifdef _OPENMP

@@ -39,6 +39,8 @@
 
 #include <OpenMS/FORMAT/ParamXMLFile.h>
 #include <OpenMS/DATASTRUCTURES/Param.h>
+#include <OpenMS/DATASTRUCTURES/IntList.h>
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
 
 ///////////////////////////
 

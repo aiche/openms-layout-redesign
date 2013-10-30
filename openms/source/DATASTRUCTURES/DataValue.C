@@ -33,7 +33,15 @@
 // --------------------------------------------------------------------------
 
 #include <OpenMS/DATASTRUCTURES/DataValue.h>
+
+#include <OpenMS/DATASTRUCTURES/IntList.h>
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
+
 #include <OpenMS/CONCEPT/Types.h>
+#include <OpenMS/CONCEPT/Exception.h>
+
+#include <QtCore/QString>
+
 #include <iostream>
 #include <sstream>
 #include <cstdlib>

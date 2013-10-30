@@ -40,6 +40,9 @@
 #include <OpenMS/KERNEL/ConsensusMap.h>
 #include <OpenMS/CONCEPT/LogStream.h>
 
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
+#include <OpenMS/DATASTRUCTURES/IntList.h>
+
 #include <algorithm>
 #include <limits>
 #include <iostream>

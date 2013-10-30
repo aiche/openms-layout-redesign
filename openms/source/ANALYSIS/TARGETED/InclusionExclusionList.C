@@ -34,11 +34,16 @@
 //
 
 #include <OpenMS/ANALYSIS/TARGETED/InclusionExclusionList.h>
+
 #include <OpenMS/CHEMISTRY/EnzymaticDigestion.h>
+
 #include <OpenMS/SIMULATION/RTSimulation.h>
+
 #include <OpenMS/COMPARISON/CLUSTERING/SingleLinkage.h>
 #include <OpenMS/COMPARISON/CLUSTERING/ClusterAnalyzer.h>
 #include <OpenMS/COMPARISON/CLUSTERING/ClusterHierarchical.h>
+
+#include <OpenMS/DATASTRUCTURES/IntList.h>
 
 #include <fstream>
 

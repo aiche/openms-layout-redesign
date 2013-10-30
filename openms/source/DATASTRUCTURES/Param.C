@@ -34,6 +34,9 @@
 
 #include <OpenMS/DATASTRUCTURES/Param.h>
 
+#include <OpenMS/DATASTRUCTURES/IntList.h>
+#include <OpenMS/DATASTRUCTURES/DoubleList.h>
+
 #include <iostream>
 #include <fstream>
 #include <limits>
@@ -41,6 +44,8 @@
 #include <cctype> // for "isalpha"
 
 #include <OpenMS/CONCEPT/LogStream.h>
+
+#include <QtCore/QString>
 
 using namespace std;
 using namespace OpenMS::Exception;
